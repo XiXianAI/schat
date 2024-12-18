@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "schat"
+version = "0.1.0"
+description = "A chat framework supporting multiple LLM providers"
+authors = [{name = "Your Name", email = "your.email@example.com"}]
+dependencies = [
+    "openai>=1.0.0",
+    "anthropic>=0.18.1",
+    "google-generativeai>=0.3.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.setuptools]
+packages = ["schat"]
